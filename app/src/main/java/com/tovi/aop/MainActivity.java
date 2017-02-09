@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Calculator arithmeticCalculatorProxy = (Calculator) new ArithmeticCalculatorInvocationHandler(new ArithmeticCalculator()).getProxy();
+        // 验证参数
         Calculator argValidityProxy = (Calculator) new ArithmeticCalculatorArgsInvocationHandler(arithmeticCalculatorProxy).getProxy();
         try {
             arithmeticCalculatorProxy.add(10d, 10d);
